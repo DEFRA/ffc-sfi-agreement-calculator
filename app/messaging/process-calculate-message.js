@@ -18,7 +18,7 @@ const processCalculateMessage = async (message, receiver) => {
     await sendMessage(paymentRates, 'uk.gov.sfi.agreement.calculate.response', config.calculateResponseQueue, { sessionId: messageId })
     await receiver.completeMessage(message)
   } catch (err) {
-    console.error('Unable to process message:', err)
+    console.error('Unable to process calculate message:', err)
     await receiver.abandonMessage(message)
   }
 }

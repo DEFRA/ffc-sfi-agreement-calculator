@@ -21,7 +21,7 @@ const processValidateMessage = async (message, receiver) => {
 
     await receiver.completeMessage(message)
   } catch (err) {
-    console.error('Unable to process message:', err)
+    console.error('Unable to process validate message:', err)
   }
 }
 

@@ -5,7 +5,7 @@ const processSubmitMessage = async (message, receiver) => {
     await saveAgreement(message.body)
     await receiver.completeMessage(message)
   } catch (err) {
-    console.error('Unable to process message:', err)
+    console.error('Unable to process submit message:', err)
   }
 }
 

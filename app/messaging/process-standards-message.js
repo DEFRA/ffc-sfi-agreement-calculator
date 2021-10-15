@@ -18,7 +18,7 @@ const processStandardsMessage = async (message, receiver) => {
     await sendMessage(standards, 'uk.gov.sfi.agreement.standards.request.response', config.standardsResponseQueue, { sessionId: messageId })
     await receiver.completeMessage(message)
   } catch (err) {
-    console.error('Unable to process message:', err)
+    console.error('Unable to process standards request message:', err)
     await receiver.abandonMessage(message)
   }
 }

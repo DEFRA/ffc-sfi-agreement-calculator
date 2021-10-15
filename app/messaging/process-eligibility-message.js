@@ -18,7 +18,7 @@ const processEligibilityMessage = async (message, receiver) => {
     await sendMessage(eligibility, 'uk.gov.sfi.agreement.eligibility.request.response', config.eligibilityCheckResponseQueue, { sessionId: messageId })
     await receiver.completeMessage(message)
   } catch (err) {
-    console.error('Unable to process message:', err)
+    console.error('Unable to process eligibility message:', err)
     await receiver.abandonMessage(message)
   }
 }
